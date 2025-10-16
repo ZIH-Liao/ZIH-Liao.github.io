@@ -61,18 +61,11 @@
     <a name="top"></a>
     <!--首頁-->
     <style>
-    .myimg {
-      position: absolute;
-      inset: 0;
-      background: url(./media/background.webp) center center / cover no-repeat;
+    body {
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+        url(./media/background.webp) center center / cover no-repeat fixed;
     }
 
-    .myimg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.75);
-    }
 
       .header{
         background-color: aliceblue;
@@ -106,37 +99,38 @@
       color:white;
       font-size:30px;
     }
+    .blockTitle {
+      position: relative;
+      color:white;
+    }
     </style>
     <div class="content">
-      <div class="myimg"></div>
-        <!-- 這裡開始撰寫 -->
-
-        
         <!-- 導覽列 -->
         <div class="header bg-light p-3 text-center">
-          <h3 style="color:black">Liao-Zike 網頁作業</h3>
+          <h3 style="color:black;">Liao-Zike 網頁作業</h3>
         </div>
 
         <!-- 主內容 -->
         <div class="content container text-center">
-          <h2 class="mb-5">🎬 我最喜歡的影片與照片</h2>
+          <h2 class="mb-5 blockTitle pt-5">🎬 我最喜歡的影片與照片</h2>
 
           <div class="row g-4">
             <div class="col-md-4">
               <div class="card p-3">
-                <iframe width="1236" height="695" src="https://www.youtube.com/embed/CEbr5Mgn0FA" title="停車場無法用!虎科學生停住家旁 居民不滿｜TVBS新聞 @TVBS NEWS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                <p class="mt-3">🎵 X調查</p>
+                <iframe width="1236" height="695" src="https://www.youtube.com/embed/CEbr5Mgn0FA" title="停車場無法用!虎科學生停住家旁 居民不滿｜TVBS新聞 @TVBS NEWS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="mt-3">勁爆新聞</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card p-3">
-                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
-                <p class="mt-3">🌌 大自然奇景</p>
+                <iframe width="1236" height="695" src="https://www.youtube.com/embed/pevmo-URpJM" title="警方與節目組現場聯手做局，只有「女主角」蒙在鼓裡，佛羅里達局中局案" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="mt-3">X調查</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card p-3">
-                <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk" allowfullscreen></iframe>
-                <p class="mt-3">☕ 放鬆音樂 Chill Beats</p>
+                <iframe width="1236" height="695" src="https://www.youtube.com/embed/lrDlTEbHw3g?list=RDlrDlTEbHw3g" title="CORSAK - 溯（Reverse） Feat. 馬吟吟『Alan Walker 鼎力推薦的中國電音製作人！』【動態歌詞Lyrics】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="mt-3">Music</p>
               </div>
             </div>
           </div>
@@ -164,6 +158,10 @@
             </div>
           </div>
 
+          <hr class="my-5" style="border-color: rgba(255,255,255,0.3);">
+          <h2 class="mb-4 blockTitle">📊 Plotly.js 數據圖表</h2>
+          <div id="plotlyChart" style="width:100%;margin:auto;"></div>
+          <div id="plotlyLine" style="width:100%;max-width:900px;margin:auto;"></div>
 
 
 
@@ -172,9 +170,95 @@
             <p>GoTop</p>
             <p><b>↑</b></p>
         </a>
+        <!-- Plotly.js CDN -->
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+<script>
+// 假設這是三個主題的平均分數資料
+const trace1 = {
+  x: ['音樂', '自然', '放鬆'],
+  y: [88, 92, 75],
+  name: '影片滿意度',
+  type: 'bar',
+  marker: {color: 'rgba(255,99,132,0.7)'}
+};
+
+const trace2 = {
+  x: ['音樂', '自然', '放鬆'],
+  y: [80, 95, 70],
+  name: '照片評價',
+  type: 'bar',
+  marker: {color: 'rgba(54,162,235,0.7)'}
+};
+
+const data = [trace1, trace2];
+
+const layout = {
+  title: {
+    text: '影片與照片喜好統計圖',
+    font: {color: 'white', size: 22}
+  },
+  barmode: 'group',
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: 'rgba(0,0,0,0)',
+  xaxis: {
+    title: '主題類別',
+    color: 'white',
+    tickfont: {color: 'white'}
+  },
+  yaxis: {
+    title: '平均分數',
+    color: 'white',
+    tickfont: {color: 'white'}
+  },
+  legend: {
+    font: {color: 'white'}
+  }
+};
+
+Plotly.newPlot('plotlyChart', data, layout, {responsive: true});
+
+// 折線圖示例資料（可自由換成你想要的數據）
+const lineData = [{
+  x: ['週一', '週二', '週三', '週四', '週五', '週六', '週日'],
+  y: [120, 180, 160, 200, 230, 190, 250],
+  mode: 'lines+markers',
+  name: '影片觀看數',
+  line: {color: 'rgb(255,99,132)', width: 3},
+  marker: {size: 8}
+},
+{
+  x: ['週一', '週二', '週三', '週四', '週五', '週六', '週日'],
+  y: [100, 150, 140, 190, 210, 180, 240],
+  mode: 'lines+markers',
+  name: '照片瀏覽數',
+  line: {color: 'rgb(54,162,235)', width: 3, dash: 'dot'},
+  marker: {size: 8}
+}];
+
+const lineLayout = {
+  title: {
+    text: '影片與照片瀏覽趨勢圖',
+    font: {color: 'white', size: 22}
+  },
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: 'rgba(0,0,0,0)',
+  xaxis: {
+    title: '日期',
+    color: 'white',
+    tickfont: {color: 'white'}
+  },
+  yaxis: {
+    title: '瀏覽次數',
+    color: 'white',
+    tickfont: {color: 'white'}
+  },
+  legend: {
+    font: {color: 'white'}
+  }
+};
+
+Plotly.newPlot('plotlyLine', lineData, lineLayout, {responsive: true});
+</script>
 </body>
-<!-- footer -->
-<div class="footer">
-    <p>廖子科 Liao-Zike © All RIGHTS RESERVED.</p>
-</div>
 </html>
