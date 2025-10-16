@@ -1,136 +1,180 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HWK_P1 — 影片、照片、Plotly 炫泡圖 & 同學連結</title>
-<link rel="icon" href="././media/logo.ico" type="image/x-icon" />
-<link rel="stylesheet" href="./dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="./dist/css/reset.css">
-<link rel="stylesheet" href="./dist/css/aos.css">
-<link rel="stylesheet" href="./dist/css/iconic.css">
-<link rel="stylesheet" href="./assets/main/css/header.css">
-<link rel="stylesheet" href="./assets/main/css/footer.css">
-<link rel="stylesheet" href="./assets/main/css/indexblade.css">
-<link rel="stylesheet" href="./assets/main/css/section1.css">
-<link rel="stylesheet" href="./assets/main/css/section3.css">
-<link rel="stylesheet" href="./assets/main/css/test.css">
-<style>
-.section{padding:60px 0;}
-.section_title{text-align:center;margin-bottom:24px;font-weight:700;font-size:28px;}
-.media-grid{display:grid;grid-template-columns:1fr;gap:24px}
-@media(min-width:900px){.media-grid{grid-template-columns:1fr 1fr}}
-.card{background:#fff;border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,.08);padding:16px}
-.card h3{font-size:20px;margin:0 0 12px}
-figure{margin:0}
-figure img{width:100%;height:auto;border-radius:12px;display:block}
-.links-list a{display:block;padding:10px 14px;margin:8px 0;border-radius:12px;background:rgba(0,0,0,.04);text-decoration:none}
-.links-list a:hover{background:rgba(0,0,0,.08)}
-#bubbleChart{width:100%;height:520px}
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="廖子科,LiaoZike,個人網頁,五專,資工系,資訊工程,CSIE,證照,七彩RGB設計,RWD設計,網頁設計" />
+    <meta name="description" content="我是Zi-Ke,Liao(廖子科)，一位就讀於資訊工程學系的學生。 在這裡，你可以瀏覽我的個人介紹、目前擁有的證照、競賽經驗和作品。" />
+    <link rel="icon" href="././media/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/css/reset.css">
+    <link rel="stylesheet" href="./dist/css/aos.css">
+    <link rel="stylesheet" href="./dist/css/iconic.css">
+    <link rel="stylesheet" href="./assets/main/css/header.css">
+    <link rel="stylesheet" href="./assets/main/css/footer.css">
+    <link rel="stylesheet" href="./assets/main/css/indexblade.css">
+    <link rel="stylesheet" href="./assets/main/css/section1.css">
+    <link rel="stylesheet" href="./assets/main/css/section3.css">
+    <link rel="stylesheet" href="./assets/main/css/test.css">
+    <title>LZK_Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
-
-<!-- top nav copied from index.html -->
-<nav>
-                    <a href="https://liaozike.github.io" style="background-color: rgb(255, 157, 0);"><i
+    <!--導覽列-->
+    <div id="hder">
+        <div class="header">
+            <input type="checkbox" id="menu_control" class="menu_control">
+            <div class="logo">
+                <a href="./index.html"><img src="./media/mylogo.png" height="45px" alt="Logo"></a>
+                <a href="./index.html">
+                    <p>Liao-Zike</p>
+                </a>
+            </div>
+            <label for="menu_control" class="menu_btn">
+                <div class="menu_btn_burger"></div>
+            </label>
+            <div class="menu coolbar">
+                <nav>
+                    <a href="./index.html"><i
                             class="zmdi zmdi-home"></i> 首頁</a>
-                    <a href="#a_section0" class="aboutme"><i class="zmdi zmdi-account-circle"></i> 關於我</a>
-                    <a href="#a_section1">個人生涯</a>
-                    <a href="#a_section2"><i class="zmdi zmdi-card"></i> 證照</a>
-                    <a href="#a_section3"><i class="zmdi zmdi-assignment"></i> 作品</a>
-
+                    <a href="./index.html#a_section0" class="aboutme"><i class="zmdi zmdi-account-circle"></i> 關於我</a>
+                    <a href="./index.html#a_section1">個人生涯</a>
+                    <a href="./index.html#a_section2"><i class="zmdi zmdi-card"></i> 證照</a>
+                    <a href="./index.html#a_section3"><i class="zmdi zmdi-assignment"></i> 作品</a>
+                    <a href="./hwk_p1.html" style="color:red; background-color: rgb(255, 157, 0);"><b>作業連結 !</b></a>
                     <a href="./log.html"><i class="zmdi zmdi-receipt"></i> 維護</a>
                 </nav>
-
-<!-- Section: 媒體 -->
-<div class="section" id="section-media">
-  <div class="container">
-    <div class="section_title">我喜歡的影片與照片（示例）</div>
-    <div class="media-grid">
-      <div class="card">
-        <h3>嵌入影片（YouTube iframe）</h3>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video"
-                  style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
+            </div>
         </div>
-        <p style="margin-top:10px;color:#555">可將上方網址替換成你喜歡的影片 ID。</p>
-      </div>
-      <div class="card">
-        <h3>展示照片</h3>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
-               alt="示例照片（Unsplash）">
-          <figcaption style="margin-top:8px;color:#666">示例圖：可替換為 ./media/your_photo.jpg 等本地檔。</figcaption>
-        </figure>
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- Section: Plotly 炫泡統計圖 -->
-<div class="section" id="section-plotly">
-  <div class="container">
-    <div class="section_title">Plotly.js 炫泡統計圖</div>
-    <div class="card">
-      <div id="bubbleChart"></div>
-      <p style="color:#555">此為示例：以三個指標產生泡泡大小、顏色與位置。你可以將資料換成課堂成績、專題里程碑或感興趣的數據。</p>
-    </div>
-  </div>
-</div>
 
-<!-- Section: 同學網站連結 -->
-<div class="section" id="section-links">
-  <div class="container">
-    <div class="section_title">同學網站超連結</div>
-    <div class="card">
-      <div class="links-list">
-        <a href="https://example.com/student-a" target="_blank" rel="noopener">同學 A 的網站</a>
-        <a href="https://example.com/student-b" target="_blank" rel="noopener">同學 B 的網站</a>
-        <a href="https://example.com/student-c" target="_blank" rel="noopener">同學 C 的網站</a>
-      </div>
-      <p style="color:#555">請將上方三個網址替換為你班上三位同學的實際網站連結。</p>
-    </div>
-  </div>
-</div>
+    <script src="./dist/js/jquery-3.7.1.min.js"></script>
+    <script src="./dist/js/aos.js"></script>
+    <script src="./dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/main/js/test.js"></script>
+    <a name="top"></a>
+    <!--首頁-->
+    <style>
+    .myimg {
+      position: absolute;
+      inset: 0;
+      background: url(./media/background.webp) center center / cover no-repeat;
+    }
 
-<script src="./dist/js/jquery-3.7.1.min.js"></script>
-<script src="./dist/js/aos.js"></script>
-<script src="./dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    .myimg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
 
-<script>
-if (window.AOS) AOS.init();
+      .header{
+        background-color: aliceblue;
+      }
+      
+    iframe {
+      border-radius: 10px;
+      width: 100%;
+      height: 250px;
+    }
 
-const data = [{
-  x: [1, 2, 3, 4, 5],
-  y: [10, 15, 13, 17, 12],
-  text: ['Alpha','Beta','Gamma','Delta','Epsilon'],
-  mode: 'markers',
-  marker: {
-    size: [20, 40, 25, 60, 35],
-    sizemode: 'area',
-    sizeref: 2.0,
-    opacity: 0.8
-  },
-  hovertemplate: '%{text}<br>x=%{x}<br>y=%{y}<extra></extra>'
-}];
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      transition: 0.3s;
+    }
 
-const layout = {
-  title: '示例：Plotly 泡泡圖',
-  xaxis: {title: 'X 指標'},
-  yaxis: {title: 'Y 指標'},
-  showlegend: false
-};
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
 
-Plotly.newPlot('bubbleChart', data, layout, {responsive: true});
-</script>
+    img.photo {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .mt-3{
+      color:white;
+      font-size:30px;
+    }
+    </style>
+    <div class="content">
+      <div class="myimg"></div>
+        <!-- 這裡開始撰寫 -->
 
+        
+        <!-- 導覽列 -->
+        <div class="header bg-light p-3 text-center">
+          <h3 style="color:black">Liao-Zike 網頁作業</h3>
+        </div>
+
+        <!-- 主內容 -->
+        <div class="content container text-center">
+          <h2 class="mb-5">🎬 我最喜歡的影片與照片</h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card p-3">
+                <iframe width="1236" height="695" src="https://www.youtube.com/embed/CEbr5Mgn0FA" title="停車場無法用!虎科學生停住家旁 居民不滿｜TVBS新聞 @TVBS NEWS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                <p class="mt-3">🎵 X調查</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-3">
+                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+                <p class="mt-3">🌌 大自然奇景</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-3">
+                <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk" allowfullscreen></iframe>
+                <p class="mt-3">☕ 放鬆音樂 Chill Beats</p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-5" style="border-color: rgba(255,255,255,0.3);">
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card p-2">
+                <img class="photo" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000" alt="">
+                <p class="mt-3">🌲 森林的清晨</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-2">
+                <img class="photo" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000" alt="">
+                <p class="mt-3">🌊 海浪的聲音</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-2">
+                <img class="photo" src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1000" alt="">
+                <p class="mt-3">🏙️ 夜晚的城市</p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        
+        <a href="#top" class="GoTop">
+            <p>GoTop</p>
+            <p><b>↑</b></p>
+        </a>
+</body>
+<!-- footer -->
 <div class="footer">
     <p>廖子科 Liao-Zike © All RIGHTS RESERVED.</p>
 </div>
-</body>
 </html>
