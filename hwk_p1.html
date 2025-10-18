@@ -23,7 +23,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-
 <body>
     <!--導覽列-->
     <div id="hder">
@@ -101,8 +100,38 @@
     }
     .blockTitle {
       position: relative;
+      background-color: rgb(196, 159, 83);
+      border-radius: 5px;
       color:white;
+      padding: 20px 0;
     }
+    .student-card {
+      text-decoration: none;
+    }
+    
+    .student-card .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 16px;
+      color: white;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+    
+    .student-card .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
+      background: linear-gradient(145deg, rgba(255, 180, 0, 0.25), rgba(255, 255, 255, 0.05));
+    }
+    
+    .student-img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+    
     </style>
     <div class="content">
         <!-- 導覽列 -->
@@ -112,19 +141,19 @@
 
         <!-- 主內容 -->
         <div class="content container text-center">
-          <h2 class="mb-5 blockTitle pt-5">🎬 我最喜歡的影片與照片</h2>
+          <h2 class="mb-5 blockTitle mt-5">🎬 推薦的的影片與照片</h2>
 
           <div class="row g-4">
             <div class="col-md-4">
               <div class="card p-3">
-                <iframe width="1236" height="695" src="https://www.youtube.com/embed/CEbr5Mgn0FA" title="停車場無法用!虎科學生停住家旁 居民不滿｜TVBS新聞 @TVBS NEWS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p class="mt-3">勁爆新聞</p>
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/JqAnnwk4dKk" title="夜探廢墟也要最後一集了嗎，差點死在這阿【谷阿莫Life】327" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="mt-3">古阿莫-夜探廢墟</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card p-3">
-                <iframe width="1236" height="695" src="https://www.youtube.com/embed/pevmo-URpJM" title="警方與節目組現場聯手做局，只有「女主角」蒙在鼓裡，佛羅里達局中局案" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p class="mt-3">X調查</p>
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/wUDaoVAVIao" title="【電影劇組 爆笑雷包】業界大牌導演 頭上三把火！電影影視劇組工作出包！攝影師傻眼！全場驚呼 Film crew comedy｜反正我很閒" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="mt-3">反正我很閒</p>
               </div>
             </div>
             <div class="col-md-4">
@@ -140,20 +169,20 @@
           <div class="row g-4">
             <div class="col-md-4">
               <div class="card p-2">
-                <img class="photo" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000" alt="">
-                <p class="mt-3">🌲 森林的清晨</p>
+                <img class="photo" src="https://ws.yunlin.gov.tw/001/Upload/400/RelPic/9662/237711/20190610120445@710x470.jpg" alt="">
+                <p class="mt-3">🌊 雲林之美-成龍溼地</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card p-2">
-                <img class="photo" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000" alt="">
-                <p class="mt-3">🌊 海浪的聲音</p>
+                <img class="photo" src="https://www.swcoast-nsa.gov.tw/image/36394/1024x768" alt="">
+                <p class="mt-3">🌲 雲林之美-椬梧滯洪池</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card p-2">
-                <img class="photo" src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1000" alt="">
-                <p class="mt-3">🏙️ 夜晚的城市</p>
+                <img class="photo" src="https://img.ltn.com.tw/Upload/news/600/2022/12/17/121.jpg" alt="">
+                <p class="mt-3">🚂 雲林之美-虎尾鐵橋</p>
               </div>
             </div>
           </div>
@@ -165,7 +194,43 @@
 
 
           <hr class="my-5" style="border-color: rgba(255,255,255,0.3);">
-          <h2 class="mb-4 blockTitle">連結同學github</h2>
+          <h2 class="mb-4 blockTitle">連結同學Github</h2>
+          <h5 style="color:white;" class="mb-3">＊直接點擊卡片就連結過去了</h5>
+          <div class="row g-4 justify-content-center">
+            <!-- 同學 1 -->
+            <div class="col-md-4 col-sm-6">
+              <a href="https://nono0325.github.io" target="_blank" class="student-card">
+                <div class="card p-4 text-center">
+                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" class="student-img mb-3" alt="student1">
+                  <h5 class="fw-bold">陳有臨</h5>
+                  <p class="text-white-50">41243168</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- 同學 2 -->
+            <div class="col-md-4 col-sm-6">
+              <a href="https://zih-liao.github.io" target="_blank" class="student-card">
+                <div class="card p-4 text-center">
+                  <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" class="student-img mb-3" alt="student2">
+                  <h5 class="fw-bold">陳有臨</h5>
+                  <p class="text-white-50">41243166</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- 同學 3 -->
+            <div class="col-md-4 col-sm-6">
+              <a href="https://zih-liao.github.io" target="_blank" class="student-card">
+                <div class="card p-4 text-center">
+                  <img src="https://cdn-icons-png.flaticon.com/512/219/219970.png" class="student-img mb-3" alt="student3">
+                  <h5 class="fw-bold">陳有臨</h5>
+                  <p class="text-white-50">41243166</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
 
         
         <a href="#top" class="GoTop">
@@ -263,4 +328,10 @@ const lineLayout = {
 Plotly.newPlot('plotlyLine', lineData, lineLayout, {responsive: true});
 </script>
 </body>
+
+<!-- footer -->
+<div class="footer">
+  <p>廖子科 Liao-Zike © All RIGHTS RESERVED.</p>
+</div>
+
 </html>
