@@ -40,7 +40,7 @@ function isDesktopDevice() {
 }
 
 if (isDesktopDevice()) {
-    window.addEventListener('resize', setViewportHeight);
+    // window.addEventListener('resize', setViewportHeight);
 }
 
 
